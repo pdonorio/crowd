@@ -1,0 +1,73 @@
+
+version: '3'
+
+services:
+
+  # s0:
+  #   image: $DOCKER_IMAGE:$DOCKER_IMAGE_TAG
+  #   hostname: notebook
+  #   deploy:
+  #     replicas: 0
+  # extends: Support for `extends` is not implemented yet. Use `docker-compose config` to generate a configuration with all `extends` options resolved, and deploy from that.
+
+  s1:
+    # extends:
+    #   service: s0
+    image: $DOCKER_IMAGE:$DOCKER_IMAGE_TAG
+    hostname: notebook
+    labels:
+      notebook_port: 4321
+    ports:
+      - 4321:8888
+    deploy:
+      replicas: 5
+
+  s2:
+    image: $DOCKER_IMAGE:$DOCKER_IMAGE_TAG
+    hostname: notebook
+    labels:
+      notebook_port: 4322
+    ports:
+      - 4322:8888
+    deploy:
+      replicas: 5
+
+  s3:
+    image: $DOCKER_IMAGE:$DOCKER_IMAGE_TAG
+    hostname: notebook
+    labels:
+      notebook_port: 4323
+    ports:
+      - 4323:8888
+    deploy:
+      replicas: 5
+
+  s4:
+    image: $DOCKER_IMAGE:$DOCKER_IMAGE_TAG
+    hostname: notebook
+    labels:
+      notebook_port: 4324
+    ports:
+      - 4324:8888
+    deploy:
+      replicas: 5
+
+  s5:
+    image: $DOCKER_IMAGE:$DOCKER_IMAGE_TAG
+    hostname: notebook
+    labels:
+      notebook_port: 4325
+    ports:
+      - 4325:8888
+    deploy:
+      replicas: 5
+
+  s6:
+    image: $DOCKER_IMAGE:$DOCKER_IMAGE_TAG
+    hostname: notebook
+    labels:
+      notebook_port: 4326
+    ports:
+      - 4326:8888
+    deploy:
+      replicas: 5
